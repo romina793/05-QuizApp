@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Question Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="_5_QuizApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="QuestionController" customModule="_5_QuizApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,7 +40,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0Pk-Pv-zeb">
                                         <rect key="frame" x="8" y="50" width="382" height="60"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lq1-gL-Uf0">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lq1-gL-Uf0">
                                                 <rect key="frame" x="0.0" y="0.0" width="187" height="60"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -56,8 +56,11 @@
                                                         <real key="value" value="12"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kc8-OH-08a"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRJ-NE-H8I">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fRJ-NE-H8I">
                                                 <rect key="frame" x="195" y="0.0" width="187" height="60"/>
                                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -73,6 +76,9 @@
                                                         <real key="value" value="12"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nnP-QR-zgN"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -102,7 +108,7 @@
                                             <constraint firstAttribute="height" constant="40" id="DHf-DG-t1P"/>
                                         </constraints>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kC-kF-Exb">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6kC-kF-Exb" userLabel="ProgressView">
                                         <rect key="frame" x="2" y="313.66666666666663" width="30" height="4.3333333333333144"/>
                                         <color key="backgroundColor" red="0.94401080589837982" green="0.89516228346635696" blue="0.44932740731741239" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -137,6 +143,12 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="labelQuestion" destination="Ng7-rd-lSN" id="x9X-Lm-Siw"/>
+                        <outlet property="labelQuestionNumber" destination="P1S-3E-PUc" id="TRD-U6-f5v"/>
+                        <outlet property="labelScore" destination="EL4-bo-xPP" id="wlM-In-3JD"/>
+                        <outlet property="progressView" destination="6kC-kF-Exb" id="kcw-jr-Z6E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
